@@ -5,7 +5,7 @@
   },
   "app": {
     "latest_version": "1.1.0",
-    "min_required_version": "1.0.0",
+    "min_required_version": "1.1.0",
     "download_url": "https://www.google.com.tw",
     "note": "修正題庫更新流程與版本檢查"
   },
