@@ -10,8 +10,8 @@
     "note": "修正題庫更新流程與版本檢查"
   },
   "question_bank": {
-    "latest_version": "114.1.0",
-    "min_required_version": "114.0.0",
+    "latest_version": "114.2.0",
+    "min_required_version": "114.2.0",
     "download_url": "https://www.google.com.tw",
     "note": "新增自命題、補充圖片與修正部分題目"
   }
