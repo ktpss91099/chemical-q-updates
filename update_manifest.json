@@ -6,7 +6,7 @@
   "app": {
     "latest_version": "1.1.0",
     "min_required_version": "1.0.0",
-    "downloads": {
+    "download_url": {
       "windows": "https://www.cnsh.mlc.edu.tw/home",
       "mac": "https://.../app-mac.zip"
     },
