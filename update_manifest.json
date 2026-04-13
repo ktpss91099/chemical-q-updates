@@ -4,10 +4,13 @@
     "updated_at": "2026-04-09T14:30:00+08:00"
   },
   "app": {
-    "latest_version": "1.0.0",
+    "latest_version": "1.1.0",
     "min_required_version": "1.0.0",
-    "download_url": "https://www.cnsh.mlc.edu.tw/home",
-    "note": "修正題庫更新流程與版本檢查"
+    "downloads": {
+      "windows": "https://www.cnsh.mlc.edu.tw/home",
+      "mac": "https://.../app-mac.zip"
+    },
+    "note": "修正更新流程與版本檢查"
   },
   "question_bank": {
     "latest_version": "114.1.1",
