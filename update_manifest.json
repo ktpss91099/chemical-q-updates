@@ -8,7 +8,7 @@
     "min_required_version": "1.0.0",
     "download_url": {
       "windows": "https://www.cnsh.mlc.edu.tw/home",
-      "mac": "https://.../app-mac.zip"
+      "mac": "https://www.cnsh.mlc.edu.tw/home"
     },
     "note": "修正更新流程與版本檢查"
   },
