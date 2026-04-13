@@ -7,8 +7,8 @@
     "latest_version": "1.1.0",
     "min_required_version": "1.0.0",
     "download_url": {
-      "windows": "https://www.cnsh.mlc.edu.tw/home",
-      "mac": "https://www.cnsh.mlc.edu.tw/home"
+      "windows": "https://github.com/ktpss91099/chemical-q-updates/releases/download/程式/123.zip",
+      "mac": "https://github.com/ktpss91099/chemical-q-updates/releases/download/程式/123.zip"
     },
     "note": "修正更新流程與版本檢查"
   },
