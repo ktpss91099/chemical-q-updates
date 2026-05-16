@@ -10,7 +10,7 @@
       "windows": "https://github.com/ktpss91099/chemical-q-updates/releases/download/程式/1.1.0.zip",
       "mac": "https://github.com/ktpss91099/chemical-q-updates/releases/download/Mac程式/_v1.1.0.zip"
     },
-    "note": "修正更新流程與版本檢查"
+    "note": "更新測試"
   },
   "question_bank": {
     "latest_version": "114.1.1",
