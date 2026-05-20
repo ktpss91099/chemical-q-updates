@@ -1,3 +1,4 @@
+/* 全站色彩與設計變數 */
 :root {
   color-scheme: light;
   --bg: #fff5f0;
@@ -13,14 +14,17 @@
   --shadow: 0 18px 45px rgba(96, 54, 34, 0.14);
 }
 
+/* 全站元素盒模型設定 */
 * {
   box-sizing: border-box;
 }
 
+/* 頁面捲動行為 */
 html {
   scroll-behavior: smooth;
 }
 
+/* 頁面主體樣式 */
 body {
   margin: 0;
   background: var(--bg);
@@ -29,10 +33,12 @@ body {
   line-height: 1.6;
 }
 
+/* 連結預設顏色 */
 a {
   color: inherit;
 }
 
+/* 網站頂部導覽列外層 */
 .site-header {
   position: sticky;
   top: 0;
@@ -42,6 +48,7 @@ a {
   backdrop-filter: blur(12px);
 }
 
+/* 導覽列內容排列 */
 .nav {
   display: flex;
   align-items: center;
@@ -52,6 +59,7 @@ a {
   margin: 0 auto;
 }
 
+/* 品牌連結區塊 */
 .brand {
   display: inline-flex;
   align-items: center;
@@ -60,6 +68,7 @@ a {
   text-decoration: none;
 }
 
+/* 品牌標誌圖片 */
 .brand-logo {
   display: block;
   width: 38px;
@@ -67,6 +76,7 @@ a {
   object-fit: contain;
 }
 
+/* 導覽連結容器 */
 .nav-links {
   display: flex;
   align-items: center;
@@ -75,14 +85,17 @@ a {
   font-size: 15px;
 }
 
+/* 導覽連結文字 */
 .nav-links a {
   text-decoration: none;
 }
 
+/* 導覽連結滑過狀態 */
 .nav-links a:hover {
   color: var(--primary);
 }
 
+/* 首頁主視覺區塊 */
 .hero {
   display: grid;
   align-items: center;
@@ -96,11 +109,13 @@ a {
   color: #ffffff;
 }
 
+/* 首頁主視覺內容容器 */
 .hero-content {
   width: min(1120px, 100%);
   margin: 0 auto;
 }
 
+/* 小標籤文字 */
 .eyebrow {
   margin: 0 0 10px;
   color: var(--accent);
@@ -110,10 +125,12 @@ a {
   text-transform: uppercase;
 }
 
+/* 主視覺區內的小標籤文字 */
 .hero .eyebrow {
   color: #ffc49e;
 }
 
+/* 標題與段落的預設上方間距 */
 h1,
 h2,
 h3,
@@ -121,6 +138,7 @@ p {
   margin-top: 0;
 }
 
+/* 主標題樣式 */
 h1 {
   max-width: 720px;
   margin-bottom: 18px;
@@ -128,6 +146,7 @@ h1 {
   line-height: 1.08;
 }
 
+/* 主視覺說明文字 */
 .hero-text {
   max-width: 620px;
   margin-bottom: 28px;
@@ -135,18 +154,20 @@ h1 {
   font-size: 20px;
 }
 
+/* 主視覺按鈕群組 */
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
 
+/* 通用按鈕樣式 */
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
-  padding: 10px 18px;
+  min-height: 20px;
+  padding: 5px 18px;
   border: 1px solid transparent;
   border-radius: 8px;
   font-weight: 700;
@@ -154,62 +175,73 @@ h1 {
   transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
 }
 
+/* 按鈕滑過狀態 */
 .button:hover {
   transform: translateY(-1px);
 }
 
+/* 主要按鈕樣式 */
 .button.primary {
   background: var(--primary);
   color: #ffffff;
 }
 
+/* 主要按鈕滑過狀態 */
 .button.primary:hover {
   background: var(--primary-dark);
 }
 
+/* 次要按鈕樣式 */
 .button.secondary {
   border-color: rgba(255, 255, 255, 0.5);
   color: #ffffff;
 }
 
+/* 次要按鈕滑過狀態 */
 .button.secondary:hover {
   border-color: #ffffff;
   background: rgba(255, 255, 255, 0.1);
 }
 
+/* 通用內容區塊 */
 .section {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
   padding: 72px 0;
 }
 
+/* 版本下載區塊 */
 .version-section {
   padding-bottom: 9px;
 }
 
+/* 區塊標題容器 */
 .section-heading {
   margin-bottom: 26px;
 }
 
+/* 區塊標題文字 */
 .section-heading h2 {
   margin-bottom: 0;
   font-size: 32px;
   line-height: 1.2;
 }
 
+/* 下載卡片網格 */
 .download-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
 }
 
+/* 下載卡片 */
 .download-card {
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 10px;
+  gap: 0px;
   min-height: 280px;
   padding: 40px 60px 10px;
   background-image: url("assets/blackboard.webp");
@@ -222,6 +254,7 @@ h1 {
   transition: transform 180ms ease;
 }
 
+/* 下載卡片滑過狀態 */
 .download-card:hover {
   background:
     linear-gradient(rgba(31, 24, 20, 0.5), rgba(31, 24, 20, 0.58)),
@@ -231,34 +264,39 @@ h1 {
   transform: translateY(-2px);
 }
 
+/* 卡片標籤文字 */
 .card-label {
-  margin-bottom: 8px;
+  margin-bottom: 0px;
   color: rgba(255, 255, 255, 0.92);
   font-size: 13px;
   font-weight: 800;
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
 }
 
+/* 下載卡片標題 */
 .download-card h3 {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   font-size: 22px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
+/* 下載卡片段落文字 */
 .download-card p {
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
 }
 
+/* 下載卡片操作列 */
 .download-actions {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 0;
-  padding-top: 4px;
+  padding-top: 0;
 }
 
+/* 下載卡片內的主要按鈕 */
 .download-card .button.primary {
   flex: 0 1 220px;
   min-height: 20px;
@@ -268,6 +306,7 @@ h1 {
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
+/* 下載卡片內的主要按鈕滑過狀態 */
 .download-card .button.primary:hover {
   background: rgba(255, 255, 255, 0.92);
   border-color: #ffffff;
@@ -275,69 +314,69 @@ h1 {
   text-shadow: none;
 }
 
+/* 版本選單容器 */
 .version-menu {
-  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 1 220px;
   color: rgba(255, 255, 255, 0.86);
-  font-size: 14px;
+  font-size: 12px;
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
 }
 
-.version-menu summary {
-  width: fit-content;
-  cursor: pointer;
-  color: rgba(255, 255, 255, 0.86);
+/* 版本選單標籤文字 */
+.version-menu span {
+  white-space: nowrap;
 }
 
-.version-menu summary:hover {
-  color: #ffffff;
-}
-
-.version-menu summary::marker {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.version-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.version-links a {
-  display: inline-flex;
-  align-items: center;
+/* 版本下拉選單 */
+.version-select {
+  width: 100px;
   min-height: 32px;
-  padding: 4px 10px;
-  background: rgba(255, 255, 255, 0.08);
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.55);
-  border-radius: 999px;
+  border-radius: 8px;
   color: #ffffff;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  text-decoration: none;
   text-shadow: none;
 }
 
-.version-links a:hover {
+/* 版本下拉選單內的選項 */
+.version-select option {
+  background: #ffffff;
+  color: var(--text);
+}
+
+/* 版本下拉選單滑過與聚焦狀態 */
+.version-select:hover,
+.version-select:focus {
   background: rgba(255, 255, 255, 0.92);
   border-color: #ffffff;
   color: var(--primary-dark);
+  outline: none;
 }
 
+/* 題庫區塊 */
 .question-bank-section {
   padding-top: 0;
 }
 
+/* 題庫區塊版面 */
 .question-bank-layout {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
 }
 
+/* 題庫預留卡片高度 */
 .question-bank-placeholder {
   min-height: 280px;
 }
 
+/* 資訊面板 */
 .info-panel {
   background: var(--surface-warm);
   border: 1px solid var(--line);
@@ -345,36 +384,43 @@ h1 {
   box-shadow: var(--shadow);
 }
 
+/* 定義清單整體版面 */
 dl {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin: 0;
 }
 
+/* 定義清單單一項目 */
 dl div {
   padding: 22px;
   border-right: 1px solid var(--line);
 }
 
+/* 定義清單最後一項 */
 dl div:last-child {
   border-right: 0;
 }
 
+/* 定義清單標籤文字 */
 dt {
   color: var(--muted);
   font-size: 14px;
 }
 
+/* 定義清單內容文字 */
 dd {
   margin: 6px 0 0;
   font-size: 18px;
   font-weight: 800;
 }
 
+/* 定義清單內容連結 */
 dd a {
   color: var(--primary);
 }
 
+/* 網站頁尾 */
 .site-footer {
   display: flex;
   align-items: center;
@@ -387,52 +433,63 @@ dd a {
   color: var(--muted);
 }
 
+/* 頁尾段落文字 */
 .site-footer p {
   margin: 0;
 }
 
+/* 頁尾連結 */
 .site-footer a {
   color: var(--primary);
   font-weight: 700;
   text-decoration: none;
 }
 
+/* 中小螢幕版面調整 */
 @media (max-width: 860px) {
+  /* 手機版導覽列排列 */
   .nav {
     align-items: flex-start;
     flex-direction: column;
     padding: 14px 0;
   }
 
+  /* 手機版導覽連結換行 */
   .nav-links {
     flex-wrap: wrap;
     gap: 10px 16px;
   }
 
+  /* 手機版主視覺尺寸 */
   .hero {
     min-height: 500px;
     padding: 64px 16px;
   }
 
+  /* 手機版網格改為單欄 */
   .download-grid,
   .question-bank-layout,
   dl {
     grid-template-columns: 1fr;
   }
 
+  /* 手機版隱藏題庫預留區塊 */
   .question-bank-placeholder {
     display: none;
   }
 
+  /* 手機版定義清單項目分隔線 */
   dl div {
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
 
+  /* 手機版定義清單最後一項 */
   dl div:last-child {
     border-bottom: 0;
   }
 
+  /* 手機版頁尾排列 */
   .site-footer {
     align-items: flex-start;
     flex-direction: column;
