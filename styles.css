@@ -71,8 +71,8 @@ a {
 /* 品牌標誌圖片 */
 .brand-logo {
   display: block;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
 }
 
@@ -140,7 +140,7 @@ p {
 
 /* 主標題樣式 */
 h1 {
-  max-width: 720px;
+  max-width: 740px;
   margin-bottom: 18px;
   font-size: clamp(40px, 8vw, 72px);
   line-height: 1.08;
@@ -243,13 +243,14 @@ h1 {
   justify-content: flex-start;
   gap: 0px;
   min-height: 280px;
-  padding: 40px 60px 10px;
+  padding: 40px clamp(28px, 10%, 60px) 34px;
+  background-color: transparent;
   background-image: url("assets/blackboard.webp");
   background-position: center;
   background-size: 112% 400px;
-  border: 1px solid var(--line);
+  border: 1px solid transparent;
   border-radius: 8px;
-  box-shadow: var(--shadow);
+  box-shadow: none;
   color: #ffffff;
   transition: transform 180ms ease;
 }
@@ -257,7 +258,7 @@ h1 {
 /* 下載卡片滑過狀態 */
 .download-card:hover {
   background:
-    linear-gradient(rgba(31, 24, 20, 0.5), rgba(31, 24, 20, 0.58)),
+    linear-gradient(rgba(31, 24, 20, 0.05), rgba(31, 24, 20, 0.10)),
     url("assets/blackboard.webp");
   background-position: center;
   background-size: 112% 400px;
@@ -267,7 +268,7 @@ h1 {
 /* 卡片標籤文字 */
 .card-label {
   margin-bottom: 0px;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(242, 242, 242, 0.9);
   font-size: 13px;
   font-weight: 800;
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
@@ -275,40 +276,100 @@ h1 {
 
 /* 下載卡片標題 */
 .download-card h3 {
-  margin-bottom: 0px;
-  font-size: 22px;
+  margin-bottom: 5px;
+  color: rgba(242, 242, 242, 0.9);
+  font-size: 24px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* 下載卡片段落文字 */
 .download-card p {
-  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0px;
+  padding-left: 10px;
+  font-size: 14px;
+  min-height: 3.2em;
+  color: rgba(242, 242, 242, 0.9);
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+}
+
+/* 下載卡片下半部左右版面 */
+.download-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
 }
 
 /* 下載卡片操作列 */
 .download-actions {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
   margin-top: 0;
   padding-top: 0;
 }
 
+/* 系統圖片區塊 */
+.system-media {
+  display: flex;
+  /* flex: 0 0 120px; */
+  flex: 0 0 clamp(40px, 30.65%, 120px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-height: 96px;
+}
+
+/* 系統圖示 */
+.system-icon {
+  display: block;
+  /* width: 52px; */
+  width: clamp(17.3px, 43.3%, 52px);
+  max-height: 52px;
+  object-fit: contain;
+}
+
+/* Apple 系統圖示 */
+.apple-icon {
+  /* width: 46px; */
+  width: clamp(15.3px, 38.33%, 46px);
+  filter: invert(1);
+}
+
+/* 系統文字標誌 */
+.system-logo {
+  display: block;
+  /* width: 112px; */
+  width: clamp(56px, 93.33%, 112px);
+  max-height: 36px;
+  object-fit: contain;
+}
+
+/* macOS 文字標誌 */
+.mac-logo {
+  filter: invert(1);
+}
+
 /* 下載卡片內的主要按鈕 */
 .download-card .button.primary {
-  flex: 0 1 220px;
+  flex: 0 0 auto;
+  width: min(236px, 100%);
   min-height: 20px;
-  background: rgba(255, 255, 255, 0.12);
+  gap: 0.35em;
+  background: rgba(242, 242, 242, 0.12);
   border: 2px solid rgba(255, 255, 255, 0.82);
-  color: #ffffff;
+  color: rgba(242, 242, 242, 0.9);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
 }
 
 /* 下載卡片內的主要按鈕滑過狀態 */
 .download-card .button.primary:hover {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(242, 242, 242, 0.9);
   border-color: #ffffff;
   color: var(--primary-dark);
   text-shadow: none;
@@ -319,8 +380,8 @@ h1 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  flex: 0 1 220px;
-  color: rgba(255, 255, 255, 0.86);
+  flex: 0 0 auto;
+  color: rgba(242, 242, 242, 0.9);
   font-size: 12px;
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
 }
@@ -335,8 +396,8 @@ h1 {
   width: 100px;
   min-height: 32px;
   padding: 4px 8px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(242, 242, 242, 0.12);
+  border: 1px solid rgba(242, 242, 242, 0.55);
   border-radius: 8px;
   color: #ffffff;
   font-size: 12px;
@@ -445,8 +506,20 @@ dd a {
   text-decoration: none;
 }
 
-/* 中小螢幕版面調整 */
-@media (max-width: 860px) {
+@media (max-width: 1024px) {
+  /* 中等螢幕下載卡片內距 */
+  .download-card {
+    padding: 40px clamp(22px, 20%, 50px) 34px;
+  }
+
+  /* 中等螢幕下載卡片下半部間距 */
+  .download-card-bottom {
+    gap: 14px;
+  }
+}
+
+/* 中小螢幕版面調整(佈局兩排變一排) */
+@media (max-width: 768px) {
   /* 手機版導覽列排列 */
   .nav {
     align-items: flex-start;
@@ -493,5 +566,60 @@ dd a {
   .site-footer {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  /* 單欄版下載卡片內距 */
+  .download-card {
+    padding: 40px clamp(24px, 10%, 100px) 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* 小手機版下載卡片下半部左右排列 */
+  .download-card-bottom {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* 小手機版下載卡片標題 */
+  .download-card h3 {
+    font-size: 18px;
+  }
+  .system-media {
+    flex: 0 0 clamp(40px, 45.98%, 150px);
+  }
+  /* 小手機版下載卡片操作列 */
+  .download-card-bottom .download-actions {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* 小手機版下載卡片主要按鈕 */
+  .download-card-bottom .button.primary {
+    flex-direction: column;
+    gap: 0;
+    width: 100px;
+    min-height: 44px;
+    font-size: 16px;
+    line-height: 1.15;
+    white-space: normal;
+  }
+
+  /* 小手機版隱藏按鈕前綴 */
+  .download-card-bottom .button-prefix {
+    display: none;
+  }
+
+  /* 小手機版版本選單 */
+  .download-card-bottom .version-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  /* 小手機版版本下拉選單 */
+  .download-card-bottom .version-select {
+    width: 100px;
   }
 }
