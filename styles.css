@@ -29,6 +29,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
+  cursor: url("assets/pencil48.png") 0 0, auto;
   font-family: "Segoe UI", "Microsoft JhengHei", Arial, sans-serif;
   line-height: 1.6;
 }
@@ -36,6 +37,11 @@ body {
 /* 連結預設顏色 */
 a {
   color: inherit;
+  cursor: url("assets/pencil48_1.png") 0 0, pointer;
+}
+
+button {
+  cursor: url("assets/pencil48_1.png") 0 0, pointer;
 }
 
 /* 網站頂部導覽列外層 */
@@ -66,13 +72,14 @@ a {
   gap: 10px;
   font-weight: 800;
   text-decoration: none;
+  font-size: 20px
 }
 
 /* 品牌標誌圖片 */
 .brand-logo {
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
 }
 
@@ -166,6 +173,7 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  cursor: url("assets/pencil48_1.png") 0 0, pointer;
   min-height: 20px;
   padding: 5px 18px;
   border: 1px solid transparent;
@@ -207,7 +215,7 @@ h1 {
 .section {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 72px 0;
+  padding: 48px 0 72px;
 }
 
 /* 版本下載區塊 */
@@ -242,6 +250,7 @@ h1 {
   flex-direction: column;
   justify-content: flex-start;
   gap: 0px;
+  cursor: url("assets/chalk48.png") 3 3, auto;
   min-height: 280px;
   padding: 40px clamp(28px, 10%, 60px) 34px;
   background-color: transparent;
@@ -261,7 +270,7 @@ h1 {
     linear-gradient(rgba(31, 24, 20, 0.05), rgba(31, 24, 20, 0.10)),
     url("assets/blackboard.webp");
   background-position: center;
-  background-size: 112% 400px;
+  background-size: 113% 410px;
   transform: translateY(-2px);
 }
 
@@ -360,6 +369,7 @@ h1 {
   width: min(236px, 100%);
   min-height: 20px;
   gap: 0.35em;
+  cursor: url("assets/chalk64.png") 6 6, pointer;
   background: rgba(242, 242, 242, 0.12);
   border: 2px solid rgba(255, 255, 255, 0.82);
   color: rgba(242, 242, 242, 0.9);
@@ -391,6 +401,10 @@ h1 {
   white-space: nowrap;
 }
 
+.download-card .version-menu {
+  cursor: url("assets/chalk48.png") 3 3, auto;
+}
+
 /* 版本下拉選單 */
 .version-select {
   width: 100px;
@@ -405,6 +419,10 @@ h1 {
   text-shadow: none;
 }
 
+.download-card .version-select {
+  cursor: url("assets/chalk64.png") 0 0, pointer;
+}
+
 /* 版本下拉選單內的選項 */
 .version-select option {
   background: #ffffff;
@@ -412,11 +430,13 @@ h1 {
 }
 
 /* 版本下拉選單滑過與聚焦狀態 */
-.version-select:hover,
-.version-select:focus {
+.version-select:hover {
   background: rgba(255, 255, 255, 0.92);
   border-color: #ffffff;
   color: var(--primary-dark);
+}
+
+.version-select:focus {
   outline: none;
 }
 
@@ -440,7 +460,7 @@ h1 {
 /* 資訊面板 */
 .info-panel {
   background: var(--surface-warm);
-  border: 1px solid var(--line);
+  border: 2px solid var(--line);
   border-radius: 8px;
   box-shadow: var(--shadow);
 }
@@ -454,7 +474,7 @@ dl {
 
 /* 定義清單單一項目 */
 dl div {
-  padding: 22px;
+  padding: 11px 22px;
   border-right: 1px solid var(--line);
 }
 
@@ -466,19 +486,21 @@ dl div:last-child {
 /* 定義清單標籤文字 */
 dt {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 18px;
 }
 
 /* 定義清單內容文字 */
 dd {
   margin: 6px 0 0;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 800;
+  padding-left: 6px;
 }
 
 /* 定義清單內容連結 */
 dd a {
   color: var(--primary);
+  font-size: 16px;
 }
 
 /* 網站頁尾 */
@@ -553,8 +575,22 @@ dd a {
 
   /* 手機版定義清單項目分隔線 */
   dl div {
+    display: flex;
+    justify-content: space-between;
     border-right: 0;
     border-bottom: 1px solid var(--line);
+  }
+
+  dt {
+    margin-top: 4px;
+    font-size: 20px;
+  }
+
+  dd {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 800;
+    padding-left: 0px;
   }
 
   /* 手機版定義清單最後一項 */
