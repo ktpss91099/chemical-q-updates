@@ -8,7 +8,8 @@
       name="description"
       content="化工出卷系統的安裝檔、題庫與版本更新下載頁面。"
     >
-    <link rel="icon" href="assets/icon.ico">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <link rel="icon" type="image/x-ico" href="icon.ico">
     <link rel="apple-touch-icon" href="assets/logo.png">
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -154,20 +155,25 @@
               <h3>手動更新題庫更新檔</h3>
               <p>下載最新題庫資料，讓出題內容維持在最新版本。</p>
             </div>
-            <div class="download-actions">
-              <a
-                class="button primary"
-                href="https://github.com/ktpss91099/chemical-q-updates/releases"
-              >
-                下載最新題庫
-              </a>
-              <div class="version-menu">
-                <span>選擇其他版本</span>
-                <select class="version-select" aria-label="選擇題庫其他版本">
-                  <option value="">版本清單</option>
-                  <option value="https://github.com/ktpss91099/chemical-q-updates/releases">114.1.1</option>
-                  <option value="https://github.com/ktpss91099/chemical-q-updates/releases">114.1.0</option>
-                </select>
+            <div class="download-card-bottom">
+              <div class="download-actions">
+                <a
+                  class="button primary"
+                  href="https://github.com/ktpss91099/chemical-q-updates/releases"
+                >
+                  下載最新題庫
+                </a>
+                <div class="version-menu">
+                  <span>選擇其他版本</span>
+                  <select class="version-select" aria-label="選擇題庫其他版本">
+                    <option value="">版本清單</option>
+                    <option value="https://github.com/ktpss91099/chemical-q-updates/releases">114.1.1</option>
+                    <option value="https://github.com/ktpss91099/chemical-q-updates/releases">114.1.0</option>
+                  </select>
+                </div>
+              </div>
+              <div class="question-bank-media" aria-label="題庫圖片">
+                <img class="question-bank-logo" src="assets/qb_logo.svg" alt="題庫圖示">
               </div>
             </div>
           </article>

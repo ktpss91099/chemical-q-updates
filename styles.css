@@ -6,10 +6,10 @@
   --surface-warm: #fff7f1;
   --text: #35251f;
   --muted: #745f55;
-  --line: #f2c9b4;
+  --line: #e8a17d;
   --primary: #f17f42;
   --primary-dark: #c95f27;
-  --accent: #2f6f68;
+  --accent: #98441b;
   --accent-soft: #dff1ed;
   --shadow: 0 18px 45px rgba(96, 54, 34, 0.14);
 }
@@ -455,6 +455,22 @@ h1 {
 /* 題庫預留卡片高度 */
 .question-bank-placeholder {
   min-height: 280px;
+}
+
+/* 題庫圖片區塊 */
+.question-bank-media {
+  display: flex;
+  flex: 0 0 clamp(30px, 30%, 90px);
+  align-items: center;
+  justify-content: center;
+}
+
+/* 題庫圖片 */
+.question-bank-logo {
+  display: block;
+  width: 100%;
+  max-height: 120px;
+  object-fit: contain;
 }
 
 /* 資訊面板 */
