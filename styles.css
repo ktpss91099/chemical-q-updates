@@ -1,7 +1,7 @@
 /* 全站色彩與設計變數 */
 :root {
   color-scheme: light;
-  --bg: #fff5f0;
+  --bg: #ffeee6;
   --surface: #ffffff;
   --surface-warm: #fff7f1;
   --text: #35251f;
@@ -211,6 +211,31 @@ h1 {
   background: rgba(255, 255, 255, 0.1);
 }
 
+/* 主視覺下方影片區塊 */
+.story-video-section {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0 0;
+}
+
+/* 點擊播放影片容器 */
+.story-video-player {
+  position: relative;
+  width: 100%;
+  height: clamp(280px, 44vw, 540px);
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: url("assets/pencil48.cur"), pointer;
+}
+
+/* 點擊播放影片 */
+.story-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* 通用內容區塊 */
 .section {
   width: min(1120px, calc(100% - 32px));
@@ -289,6 +314,18 @@ h1 {
   color: rgba(242, 242, 242, 0.9);
   font-size: 24px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* 下載卡片標題列 */
+.download-card-heading-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.download-card-heading-row h3 {
+  min-width: 0;
 }
 
 /* 下載卡片段落文字 */
@@ -423,6 +460,34 @@ h1 {
   cursor: url("assets/chalk48.png") 3 3, pointer;
 }
 
+/* 下載卡片內的安裝說明按鈕 */
+.install-help-button {
+  flex: 0 0 auto;
+  min-height: 30px;
+  padding: 4px 14px;
+  background: rgba(242, 242, 242, 0.08);
+  border: 1px solid rgba(242, 242, 242, 0.48);
+  border-radius: 8px;
+  color: rgba(242, 242, 242, 0.9);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.download-card .install-help-button {
+  cursor: url("assets/chalk48.png") 3 3, pointer;
+}
+
+/* 下載卡片內的安裝說明按鈕滑過狀態 */
+.install-help-button:hover {
+  background: rgba(242, 242, 242, 0.9);
+  border-color: #ffffff;
+  color: var(--primary-dark);
+  text-shadow: none;
+}
+
 /* 版本下拉選單內的選項 */
 .version-select option {
   background: #ffffff;
@@ -544,6 +609,115 @@ dd a {
   text-decoration: none;
 }
 
+/* 彈窗開啟時固定頁面 */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* 安裝說明彈窗 */
+.install-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.install-modal[hidden] {
+  display: none;
+}
+
+/* 安裝說明彈窗背景 */
+.install-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(53, 37, 31, 0.58);
+  backdrop-filter: blur(8px);
+}
+
+/* 安裝說明彈窗面板 */
+.install-modal-panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(120px, 190px) minmax(0, 1fr);
+  gap: 28px;
+  width: min(760px, 100%);
+  max-height: min(86vh, 720px);
+  overflow: auto;
+  padding: 34px;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 26px 70px rgba(53, 37, 31, 0.28);
+}
+
+/* 安裝說明關閉按鈕 */
+.install-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  background: var(--surface-warm);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 26px;
+  line-height: 1;
+}
+
+/* 安裝說明圖片區 */
+.install-modal-media {
+  display: grid;
+  place-items: center;
+}
+
+/* 安裝說明圖片 */
+.install-modal-logo {
+  display: block;
+  width: min(100%, 170px);
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+/* 安裝說明內容 */
+.install-modal-content h2 {
+  margin-bottom: 10px;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.install-modal-content p {
+  color: var(--muted);
+}
+
+.install-modal-content ol {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0;
+  padding-left: 24px;
+}
+
+.install-modal-content li {
+  padding-left: 4px;
+  color: var(--text);
+}
+
+/* 安裝說明提示 */
+.install-modal-note {
+  margin: 0;
+  padding: 12px 14px;
+  background: var(--surface-warm);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
 @media (max-width: 1024px) {
   /* 中等螢幕下載卡片內距 */
   .download-card {
@@ -575,6 +749,10 @@ dd a {
   .hero {
     min-height: 500px;
     padding: 64px 16px;
+  }
+
+  .story-video-section {
+    padding-top: 32px;
   }
 
   /* 手機版網格改為單欄 */
@@ -624,6 +802,25 @@ dd a {
   .download-card {
     padding: 40px clamp(24px, 10%, 100px) 34px;
   }
+
+  /* 手機版安裝說明彈窗 */
+  .install-modal-panel {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 28px 22px;
+  }
+
+  .install-modal-media {
+    justify-content: flex-start;
+  }
+
+  .install-modal-logo {
+    width: 96px;
+  }
+
+  .install-modal-content h2 {
+    font-size: 24px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -639,6 +836,11 @@ dd a {
   .download-card h3 {
     font-size: 18px;
   }
+
+  .download-card-heading-row {
+    align-items: center;
+  }
+
   .system-media {
     flex: 0 0 clamp(40px, 45.98%, 150px);
   }
@@ -673,6 +875,10 @@ dd a {
 
   /* 小手機版版本下拉選單 */
   .download-card-bottom .version-select {
+    width: 100px;
+  }
+
+  .install-help-button {
     width: 100px;
   }
 }

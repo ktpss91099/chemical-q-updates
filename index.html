@@ -43,6 +43,18 @@
         </div>
       </section>
 
+      <section class="story-video-section" aria-label="化工出卷系統介紹影片">
+        <div
+          class="story-video-player"
+          data-video-player
+          role="button"
+          tabindex="0"
+          aria-label="播放影片"
+        >
+          <video class="story-video" src="assets/video.mp4" preload="auto" playsinline></video>
+        </div>
+      </section>
+
       <section id="version" class="section version-section">
         <div class="section-heading">
           <p class="eyebrow">Version</p>
@@ -80,7 +92,12 @@
         <div class="download-grid">
           <article class="download-card">
             <div>
-              <h3>Windows 安裝檔</h3>
+              <div class="download-card-heading-row">
+                <h3>Windows 安裝檔</h3>
+                <button class="install-help-button" type="button" data-install-target="windows">
+                  安裝說明
+                </button>
+              </div>
               <p>適合 Windows 電腦使用，下載後執行安裝檔即可安裝。</p>
             </div>
             <div class="download-card-bottom">
@@ -111,7 +128,12 @@
 
           <article class="download-card">
             <div>
-              <h3>Mac 安裝檔</h3>
+              <div class="download-card-heading-row">
+                <h3>Mac 安裝檔</h3>
+                <button class="install-help-button" type="button" data-install-target="mac">
+                  安裝說明
+                </button>
+              </div>
               <p>適合 macOS 電腦使用，下載後依照系統提示完成安裝。</p>
             </div>
             <div class="download-card-bottom">
@@ -187,7 +209,129 @@
       <a href="https://github.com/ktpss91099/chemical-q-updates">GitHub 專案</a>
     </footer>
 
+    <div class="install-modal" id="installModal" hidden>
+      <div class="install-modal-backdrop" data-install-close></div>
+      <section
+        class="install-modal-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="installModalTitle"
+      >
+        <button class="install-modal-close" type="button" aria-label="關閉安裝說明" data-install-close>
+          ×
+        </button>
+        <div class="install-modal-media">
+          <img src="assets/install_logo.png" alt="" class="install-modal-logo">
+        </div>
+        <div class="install-modal-content">
+          <p class="eyebrow">Install Guide</p>
+          <h2 id="installModalTitle">安裝說明</h2>
+          <p id="installModalIntro"></p>
+          <ol id="installModalSteps"></ol>
+          <p class="install-modal-note" id="installModalNote"></p>
+        </div>
+      </section>
+    </div>
+
     <script>
+      const installGuides = {
+        windows: {
+          title: "Windows 安裝說明",
+          intro: "下載 Windows 安裝檔後，依照安裝精靈完成設定即可開始使用。",
+          steps: [
+            "點擊 Windows 下載按鈕，前往 GitHub Releases 下載最新版安裝檔。",
+            "下載完成後，執行安裝檔並依照畫面提示完成安裝。",
+            "若 Windows 顯示安全性提示，確認來源後選擇允許執行。",
+            "安裝完成後，從桌面捷徑或開始選單開啟化工出卷系統。"
+          ],
+          note: "如果系統阻擋安裝，請確認檔案是從本頁提供的 GitHub Releases 下載。"
+        },
+        mac: {
+          title: "Mac 安裝說明",
+          intro: "macOS 可能會因為開發者驗證提示而阻擋首次開啟，這是常見的安全性提醒。",
+          steps: [
+            "點擊 Mac 下載按鈕，前往 GitHub Releases 下載 macOS 安裝檔。",
+            "開啟下載的檔案，依照畫面提示完成安裝或拖曳到 Applications。",
+            "如果出現無法驗證開發者的提示，打開系統設定中的隱私權與安全性。",
+            "在安全性區塊選擇仍要打開，回到應用程式後再次開啟。",
+            "首次開啟時若再次跳出確認視窗，選擇打開即可。"
+          ],
+          note: "Mac 安裝提示會依 macOS 版本略有不同，核心原則是確認來源後在隱私權與安全性中允許開啟。"
+        }
+      };
+
+      const installModal = document.getElementById("installModal");
+      const installModalTitle = document.getElementById("installModalTitle");
+      const installModalIntro = document.getElementById("installModalIntro");
+      const installModalSteps = document.getElementById("installModalSteps");
+      const installModalNote = document.getElementById("installModalNote");
+
+      document.querySelectorAll("[data-install-target]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const guide = installGuides[button.dataset.installTarget];
+
+          installModalTitle.textContent = guide.title;
+          installModalIntro.textContent = guide.intro;
+          installModalSteps.replaceChildren();
+          guide.steps.forEach((step) => {
+            const item = document.createElement("li");
+            item.textContent = step;
+            installModalSteps.append(item);
+          });
+          installModalNote.textContent = guide.note;
+          installModal.hidden = false;
+          document.body.classList.add("modal-open");
+        });
+      });
+
+      document.querySelectorAll("[data-install-close]").forEach((button) => {
+        button.addEventListener("click", () => {
+          installModal.hidden = true;
+          document.body.classList.remove("modal-open");
+        });
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !installModal.hidden) {
+          installModal.hidden = true;
+          document.body.classList.remove("modal-open");
+        }
+      });
+
+      document.querySelectorAll("[data-video-player]").forEach((player) => {
+        const video = player.querySelector(".story-video");
+
+        const syncVideoState = () => {
+          const isPlaying = !video.paused && !video.ended;
+          player.classList.toggle("is-playing", isPlaying);
+          player.setAttribute("aria-label", isPlaying ? "暫停影片" : "播放影片");
+        };
+
+        const toggleVideo = () => {
+          if (video.paused || video.ended) {
+            if (video.ended) {
+              video.currentTime = 0;
+            }
+            video.play().catch(() => {
+              player.classList.remove("is-playing");
+            });
+          } else {
+            video.pause();
+          }
+        };
+
+        player.addEventListener("click", toggleVideo);
+        player.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            toggleVideo();
+          }
+        });
+        video.addEventListener("play", syncVideoState);
+        video.addEventListener("pause", syncVideoState);
+        video.addEventListener("ended", syncVideoState);
+      });
+
       document.querySelectorAll(".version-select").forEach((select) => {
         select.addEventListener("change", () => {
           if (select.value) {
